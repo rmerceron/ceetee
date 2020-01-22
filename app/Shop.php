@@ -3,11 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
 
 class Shop extends Model
 {
-    use Notifiable;
     /**
      * The attributes that are mass assignable.
      *
@@ -43,5 +41,11 @@ class Shop extends Model
         $this->category_id = $category;
         $this->address_id = $address;
         $this->state_id = $state;
+    }
+
+
+    public static function getShopsByCategoryId($id)
+    {
+        return Shop::where('category_id', $id)->get();
     }
 }

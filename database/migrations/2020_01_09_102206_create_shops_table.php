@@ -19,8 +19,7 @@ class CreateShopsTable extends Migration
             $table->string('description');
             $table->string('image');
             $table->bigInteger('phone');
-            $table->time('startHours');
-            $table->time('endHours');
+            $table->string('startHours');
             $table->unsignedBigInteger('category_id')->index();
             $table->unsignedBigInteger('address_id')->index();
             $table->unsignedBigInteger('state_id')->index();

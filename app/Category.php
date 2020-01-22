@@ -27,4 +27,9 @@ class Category extends Model
         $this->libelle = $libelle;
         $this->state_id = $state;
     }
+
+    public static function getOneById($id)
+    {
+        return Category::where('id', $id)->get();
+    }
 }

@@ -12,10 +12,11 @@
 
     <body class="font-sans text-black antialased">
 
-        <div id="app" class="h-screen w-full flex justify-center items-center">
-            <shop-card></shop-card>
-        </div>
+    <div id="app" class="h-screen w-full flex justify-center items-center">
+{{--        <dropdown-list :categories="{{$categories}}"></dropdown-list>--}}
+        <shop-card :shops="{{$shops}}" ></shop-card>
+    </div>
 
-       <script src="./js/app.js"></script>
+    <script src="./js/app.js"></script>
     </body>
 </html>

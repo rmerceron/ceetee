@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('password-input', require('./components/PasswordInput.vue').default);
 Vue.component('shop-card', require('./components/ShopCard.vue').default);
+Vue.component('dropdown-list', require('./components/DropdownList.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

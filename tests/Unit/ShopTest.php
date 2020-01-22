@@ -44,7 +44,7 @@ class ShopTest extends TestCase
         $shop = new Shop([
             'corporateName'=>'Le Bon Vin!',
             'description'=>'Cave créée en 2003',
-            'image'=>'/vendor/image/shop/0001.png',
+            'image'=>'/public/image/shop/0001.png',
             'phone'=>241382467,
             'startHours'=>'08:30:00',
             'endHours'=>'19:30:00',
@@ -83,7 +83,7 @@ class ShopTest extends TestCase
         $shop = new Shop([
             'corporateName'=>'Le Bon Vin!',
             'description'=>'Cave créée en 2003',
-            'image'=>'/vendor/image/shop/0001.png',
+            'image'=>'/public/image/shop/0001.png',
             'phone'=>241382467,
             'startHours'=>'08:30:00',
             'endHours'=>'19:30:00',
@@ -96,7 +96,7 @@ class ShopTest extends TestCase
         $this->assertTrue($shop->category->is($category));
         $this->assertTrue($shop->address->is($address));
         $this->assertTrue($shop->state->is($state));
-        $shop->edit('O\'fleurs!', 'Nouveau fleuriste', '/vendor/image/shop/0002.png', 248182766, '09:00:00', '20:00:00',
+        $shop->edit('O\'fleurs!', 'Nouveau fleuriste', '/public/image/shop/0002.png', 248182766, '09:00:00', '20:00:00',
             $category->edit('fleuriste', $state->edit('actif')),
             $address->edit(38, 'rue Pierre Lise', '','Angers', 49100, 46.474438223258275, -0.5474011759536516),
             $state->edit('inactif'));
