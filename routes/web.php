@@ -12,4 +12,5 @@
 */
 
 
-Route::get('/', 'ShopController@getAll');
+Route::get('/', 'ShopController@index');
+//Route::get('/', 'CategoryController@getAll');

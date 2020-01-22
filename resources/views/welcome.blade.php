@@ -12,8 +12,7 @@
 
     <body class="font-sans text-black antialased">
 
-    <div id="app" class="h-screen w-full flex justify-center items-center">
-{{--        <dropdown-list :categories="{{$categories}}"></dropdown-list>--}}
+    <div id="app" class=" flex justify-center items-center">
         <shop-card :shops="{{$shops}}" ></shop-card>
     </div>
 

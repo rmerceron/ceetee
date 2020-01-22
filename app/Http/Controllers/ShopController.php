@@ -24,4 +24,12 @@ class ShopController extends Controller
             'shops'=>$shops,
         ]);
     }
+
+    public function index()
+    {
+        $shops = Shop::with('category','address')->get();
+        return view('welcome',[
+            'shops'=>$shops,
+        ]);
+    }
 }

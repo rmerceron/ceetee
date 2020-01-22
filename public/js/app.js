@@ -2033,7 +2033,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['shops'],
   methods: {
     recoverShops: function recoverShops() {
-      axios.get('/shops');
+      axios.get('/');
     }
   },
   data: function data() {
@@ -19859,7 +19859,7 @@ var render = function() {
                   staticClass:
                     "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
                 },
-                [_vm._v(_vm._s(shop.address_id))]
+                [_vm._v(_vm._s(shop.category.libelle))]
               ),
               _vm._v(" "),
               _c(
@@ -19868,7 +19868,19 @@ var render = function() {
                   staticClass:
                     "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
                 },
-                [_vm._v(_vm._s(shop.category_id))]
+                [
+                  _vm._v(
+                    _vm._s(shop.address.number) +
+                      " " +
+                      _vm._s(shop.address.libelle) +
+                      " " +
+                      _vm._s(shop.address.additionalAddress) +
+                      ", " +
+                      _vm._s(shop.address.city) +
+                      " " +
+                      _vm._s(shop.address.postalCode)
+                  )
+                ]
               )
             ])
           ]

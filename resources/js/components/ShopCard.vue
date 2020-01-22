@@ -10,8 +10,8 @@
                     </p>
                 </div>
                 <div class="px-6 py-4">
-                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{shop.address_id}}</span>
-                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{shop.category_id}}</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{shop.category.libelle}}</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{shop.address.number}} {{shop.address.libelle}} {{shop.address.additionalAddress}}, {{shop.address.city}} {{shop.address.postalCode}}</span>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
         ],
         methods: {
             recoverShops() {
-                axios.get('/shops')
+                axios.get('/')
             }
         },
         data() {
