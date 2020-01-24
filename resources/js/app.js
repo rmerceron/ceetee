@@ -19,9 +19,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('password-input', require('./components/PasswordInput.vue').default);
 Vue.component('shop-card', require('./components/ShopCard.vue').default);
-Vue.component('dropdown-list', require('./components/DropdownList.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

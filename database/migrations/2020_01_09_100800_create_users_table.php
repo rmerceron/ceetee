@@ -24,8 +24,8 @@ class CreateUsersTable extends Migration
             $table->date('birthday');
             $table->string('description')->nullable();
             $table->string('image')->nullable();
-            $table->double('latitude');
-            $table->double('longitude');
+            $table->double('latitude')->nullable();
+            $table->double('longitude')->nullable();
             $table->unsignedBigInteger('gender_id')->index()->nullable();
             $table->unsignedBigInteger('userType_id')->index()->nullable();
             $table->unsignedBigInteger('address_id')->index()->nullable();

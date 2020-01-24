@@ -15,13 +15,13 @@ class CreateUsersShopsTable extends Migration
     {
         Schema::create('users_shops', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('trade_id');
+            $table->unsignedBigInteger('shop_id');
             $table->timestamps();
         });
 
         Schema::table('users_shops', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('trade_id')->references('id')->on('shops');
+            $table->foreign('shop_id')->references('id')->on('shops');
         });
     }
 

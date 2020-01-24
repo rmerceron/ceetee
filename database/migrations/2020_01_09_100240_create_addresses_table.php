@@ -20,8 +20,8 @@ class CreateAddressesTable extends Migration
             $table->string('additionalAddress');
             $table->string('city');
             $table->bigInteger('postalCode');
-            $table->double('latitude');
-            $table->double('longitude');
+            $table->double('latitude')->nullable();
+            $table->double('longitude')->nullable();
             $table->timestamps();
         });
     }

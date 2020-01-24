@@ -39,7 +39,7 @@ class User extends Authenticatable
 
     public function type()
     {
-        return $this->belongsTo('\App\UserType');
+        return $this->belongsTo('\App\UserType', 'userType_id');
     }
 
     public function address()
