@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserShop extends Model
 {
+    public $table = 'users_shops';
     /**
      * The attributes that are mass assignable.
      *
@@ -25,8 +26,4 @@ class UserShop extends Model
         return $this->belongsTo('\App\Shop', 'shop_id');
     }
 
-    public static function getShopByUserId($id)
-    {
-        return UserShop::where('user_id', $id)->get();
-    }
 }

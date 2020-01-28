@@ -16,4 +16,6 @@ Route::get('/', 'WelcomeController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@userShop')->name('home');
+
+Route::get('/promotion', 'PromotionController@index')->name('promotion');

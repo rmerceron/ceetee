@@ -2,7 +2,7 @@
     <div>
         <div v-for="shop in shops">
             <div class="max-w-sm w-full lg:max-w-full lg:flex">
-                <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" v-bind:src="shop.image" title="Woman holding a mug">
+                <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" v-bind:src="shop.image">
                 </img>
                 <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                     <div class="mb-8">
@@ -28,10 +28,6 @@
         props: [
             'shops',
         ],
-        data() {
-            return {
-            }
-        }
     }
 </script>
 

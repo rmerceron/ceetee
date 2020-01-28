@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\UserShop;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,5 +26,14 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function userShop()
+    {
+        $usershops = UserShop::with('user', 'shop', 'shop.category', 'shop.address')->get()->where('user_id', Auth::user()->getAuthIdentifier());
+
+        return view('home', [
+            'usershops' => $usershops,
+        ]);
     }
 }

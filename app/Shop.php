@@ -12,7 +12,7 @@ class Shop extends Model
      * @var array
      */
     protected $fillable = [
-        'corporateName', 'description', 'image', 'phone', 'startHours', 'endHours', 'category_id', 'address_id', 'state_id',
+        'corporateName', 'description', 'image', 'phone', 'startHours', 'category_id', 'address_id', 'state_id',
     ];
 
     public function address()
@@ -43,9 +43,4 @@ class Shop extends Model
         $this->state_id = $state;
     }
 
-
-    public static function getShopsByCategoryId($id)
-    {
-        return Shop::where('category_id', $id)->get();
-    }
 }
