@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Mes commerces</div>
 
-                <div class="card-body">
+                <div class="flex justify-center items-center">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}

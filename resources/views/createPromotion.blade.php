@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header">Ajouter une promotion</div>
 
                     <div class="flex justify-center items-center">
                         @if (session('status'))
@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                            <shop-card :shops="{{$shops}}" ></shop-card>
+{{--                        <promotion-card :promotions="{{$promotions}}"></promotion-card>--}}
                     </div>
                 </div>
             </div>

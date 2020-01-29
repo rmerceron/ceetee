@@ -21,6 +21,8 @@ window.Vue = require('vue');
 
 Vue.component('shop-card', require('./components/ShopCard.vue').default);
 Vue.component('shop-trader', require('./components/ShopTrader.vue').default);
+Vue.component('promotion-card', require('./components/PromotionCard.vue').default);
+Vue.component('create-promotion', require('./components/CreatePromotion.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
