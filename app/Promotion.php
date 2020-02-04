@@ -14,7 +14,7 @@ class Promotion extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'image', 'startDate', 'endDate', 'sendingPeriod', 'limit', 'qrcode', 'shop_id', 'status_id', 'perimeter_id', 'type_id',
+        'title', 'description', 'image', 'startDate', 'endDate', 'sendingPeriod', 'limit', 'qrCode', 'shop_id', 'status_id', 'perimeter_id', 'type_id',
     ];
 
     public function shop()

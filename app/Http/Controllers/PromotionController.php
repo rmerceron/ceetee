@@ -33,12 +33,33 @@ class PromotionController extends Controller
         ]);
     }
 
-    public function input($id)
+    public function form(Int $id)
     {
+        $shopselected = $id;
+        return view('createPromotion', [
+            'shopselected' => $shopselected,
+        ]);
+    }
+
+    public function store(Int $id)
+    {
+        Promotion::create([
+            'title'=>request('title'),
+            'description'=>request('description'),
+            'image'=>'/image/promo/0.jpg',
+            'startDate'=>request('startDate'),
+            'endDate'=>request('endDate'),
+            'sendingPeriod'=>'2020-01-01 00:00:00',
+            'limit'=>request('limit'),
+            'qrCode'=>uniqid(),
+            'shop_id'=>$id,
+            'status_id'=>1,
+            'perimeter_id'=>1,
+            'type_id'=>request('promotionType'),
+        ]);
+
         $promotions = Promotion::with('shop', 'status', 'perimeter', 'type')->get()->where('shop_id', $id);
 
-        return view('createPromotion', [
-            'promotions' => $promotions,
-        ]);
+        return ['redirect' => route('promotion', $id)];
     }
 }

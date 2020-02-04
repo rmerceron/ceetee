@@ -13,8 +13,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-
-{{--                        <promotion-card :promotions="{{$promotions}}"></promotion-card>--}}
+                        <create-promotion :shopselected="{{$shopselected}}"></create-promotion>
                     </div>
                 </div>
             </div>

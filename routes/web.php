@@ -19,5 +19,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@userShop')->name('home');
 
 Route::get('/promotion/{id}', 'PromotionController@index')->name('promotion');
-
-Route::get('/createPromotion/{id}', 'PromotionController@input')->name('createPromotion');
+Route::get('/createPromotion/{id}', 'PromotionController@form');
+Route::post('/createPromotion/{id}', 'PromotionController@store');
