@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header">Acceuil</div>
 
                     <div class="flex justify-center items-center">
                         @if (session('status'))
@@ -14,7 +14,11 @@
                             </div>
                         @endif
 
-                            <shop-card :shops="{{$shops}}" ></shop-card>
+                        @if (Auth::user() != null && Auth::user()->userType_id == 3)
+                            <shop-favory :shops="{{$shops}}" :usershops="{{$usershops}}"></shop-favory>
+                        @else
+                            <shop-card :shops="{{$shops}}"></shop-card>
+                        @endif
                     </div>
                 </div>
             </div>

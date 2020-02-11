@@ -14,10 +14,15 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::post('/dashboard/{id}', 'WelcomeController@store');
+Route::delete('/dashboard/{id}', 'WelcomeController@destroy');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@userShop')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/promotion/{id}', 'PromotionController@index')->name('promotion');
 Route::get('/createPromotion/{id}', 'PromotionController@form');
 Route::post('/createPromotion/{id}', 'PromotionController@store');
+
+Route::get('/notification/{id}', 'NotificationController@index')->name('notification');

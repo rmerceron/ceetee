@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\TraderShop;
+use App\UserShop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,15 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
-
-    public function userShop()
-    {
-        $usershops = TraderShop::with('user', 'shop', 'shop.category', 'shop.address')->get()->where('user_id', Auth::user()->getAuthIdentifier());
+        $tradershops = TraderShop::with('user', 'shop', 'shop.category', 'shop.address')->get()->where('user_id', Auth::user()->getAuthIdentifier());
+        $usershops = UserShop::with('user', 'shop', 'shop.category', 'shop.address')->get()->where('user_id', Auth::user()->getAuthIdentifier());
 
         return view('home', [
+            'tradershops' => $tradershops,
             'usershops' => $usershops,
         ]);
     }
+
+
+
 }

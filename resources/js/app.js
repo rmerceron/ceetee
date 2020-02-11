@@ -20,7 +20,9 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('shop-card', require('./components/ShopCard.vue').default);
+Vue.component('shop-favory', require('./components/ShopFavory.vue').default);
 Vue.component('shop-trader', require('./components/ShopTrader.vue').default);
+Vue.component('shop-user', require('./components/ShopUser.vue').default);
 Vue.component('promotion-card', require('./components/PromotionCard.vue').default);
 Vue.component('create-promotion', require('./components/CreatePromotion.vue').default);
 

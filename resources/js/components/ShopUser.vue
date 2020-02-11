@@ -5,12 +5,12 @@
                 <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" v-bind:src="usershop.shop.image">
                 <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                     <div class="mb-8">
+                        <button class="form-check">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-6 w-6 fill-current text-yellow-500"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                        </button>
                         <div class="inline-flex float-right">
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-l" v-bind:id="usershop.shop.id" @click="viewPromo($event)">
-                                Voir mes promotions
-                            </button>
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r" v-bind:id="usershop.shop.id" @click="createPromo($event)">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-white" viewBox="0 0 20 20"><path d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/></svg>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" v-bind:id="usershop.shop.id" @click="viewPromo(usershop.shop.id)">
+                                Voir les promotions
                             </button>
                         </div><br>
                         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{usershop.shop.category.libelle}}</span>
@@ -31,19 +31,16 @@
 
 <script>
     export default {
-        name: "ShopTrader",
+        name: "ShopUser",
         props: [
             'tradershops',
 
         ],
         methods: {
-            viewPromo: function (event) {
-                window.location.href = 'promotion/'+ event.currentTarget.id
+            viewPromo: function (shopId) {
+                window.location.href = 'notification/' + shopId
             },
-            createPromo: function (event) {
-                window.location.href = 'createPromotion/'+ event.currentTarget.id
-            },
-        }
+        },
     }
 </script>
 
