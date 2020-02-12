@@ -5,7 +5,7 @@
                 <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" v-bind:src="usershop.shop.image">
                 <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                     <div class="mb-8">
-                        <button class="form-check">
+                        <button class="form-check" @click="deleteFavory(usershop.id)">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-6 w-6 fill-current text-yellow-500"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
                         </button>
                         <div class="inline-flex float-right">
@@ -39,6 +39,11 @@
         methods: {
             viewPromo: function (shopId) {
                 window.location.href = 'notification/' + shopId
+            },
+            deleteFavory(id) {
+                axios.delete('/dashboard/'+ id).then(function () {
+                    window.location.reload();
+                });
             },
         },
     }

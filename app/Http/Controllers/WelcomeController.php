@@ -51,9 +51,9 @@ class WelcomeController
      */
     public function destroy(Int $id)
     {
-        $usershop = UserShop::all()->where('shop_id', $id)->join('user_id', Auth::user()->getAuthIdentifier());
+//        $usershop = UserShop::all()->where('shop_id', $id)->join('user_id', Auth::user()->getAuthIdentifier());
 //        $userShop = UserShop::destroy($id);
-        UserShop::destroy($usershop);
+        UserShop::destroy($id);
 //        var_dump($userShop);
     }
 }

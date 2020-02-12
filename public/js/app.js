@@ -2158,17 +2158,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ShopCard",
   props: ['shops', 'usershops'],
   methods: {
     submitFavory: function submitFavory(shopId) {
-      axios.post('/dashboard/' + shopId);
+      axios.post('/dashboard/' + shopId).then(function () {
+        window.location.reload();
+      });
     },
-    deleteFavory: function deleteFavory(shopId) {
-      axios["delete"]('/dashboard/' + shopId);
+    deleteFavory: function deleteFavory(id) {
+      axios["delete"]('/dashboard/' + id).then(function () {
+        window.location.reload();
+      });
     }
   }
 });
@@ -2276,6 +2278,11 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     viewPromo: function viewPromo(shopId) {
       window.location.href = 'notification/' + shopId;
+    },
+    deleteFavory: function deleteFavory(id) {
+      axios["delete"]('/dashboard/' + id).then(function () {
+        window.location.reload();
+      });
     }
   }
 });
@@ -38292,6 +38299,8 @@ var render = function() {
                       [
                         _c("br"),
                         _vm._v(" "),
+                        _c("div", { attrs: { var: (_vm.show = true) } }),
+                        _vm._v(" "),
                         _vm._l(_vm.usershops, function(usershop) {
                           return _c("div", [
                             usershop.shop_id === shop.id
@@ -38300,9 +38309,10 @@ var render = function() {
                                     "button",
                                     {
                                       staticClass: "form-check",
+                                      attrs: { var: (_vm.show = false) },
                                       on: {
                                         click: function($event) {
-                                          return _vm.deleteFavory(shop.id)
+                                          return _vm.deleteFavory(usershop.id)
                                         }
                                       }
                                     },
@@ -38332,6 +38342,47 @@ var render = function() {
                               : _vm._e()
                           ])
                         }),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "form-check",
+                            on: {
+                              click: function($event) {
+                                return _vm.submitFavory(shop.id)
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "svg",
+                              {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.show,
+                                    expression: "show"
+                                  }
+                                ],
+                                staticClass:
+                                  "h-6 w-6 fill-current text-grey-darker",
+                                attrs: {
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  viewBox: "0 0 473.487 473.487"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M473.487,182.08l-162.872-24.127L235.904,11.23l-73.276,147.445L0,184.389l117.584,115.252L91.786,462.257l145.947-76.215\n                                    l146.684,74.787l-27.385-162.355L473.487,182.08z M237.568,352.284l-106.809,55.776l18.88-119.007l-86.052-84.346l119.017-18.819\n                                    l53.625-107.905l54.676,107.376L410.1,203.017l-85.225,85.181l20.041,118.817L237.568,352.284z"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        ),
                         _vm._v(" "),
                         _c(
                           "p",
@@ -38633,26 +38684,37 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "mb-8" }, [
-                _c("button", { staticClass: "form-check" }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "h-6 w-6 fill-current text-yellow-500",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        viewBox: "0 0 20 20"
+                _c(
+                  "button",
+                  {
+                    staticClass: "form-check",
+                    on: {
+                      click: function($event) {
+                        return _vm.deleteFavory(usershop.id)
                       }
-                    },
-                    [
-                      _c("path", {
+                    }
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "h-6 w-6 fill-current text-yellow-500",
                         attrs: {
-                          d:
-                            "M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 20 20"
                         }
-                      })
-                    ]
-                  )
-                ]),
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d:
+                              "M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"
+                          }
+                        })
+                      ]
+                    )
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "inline-flex float-right" }, [
                   _c(
