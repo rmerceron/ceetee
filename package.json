@@ -24,6 +24,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "tailwindcss": "^1.1.4"
+        "moment": "^2.24.0",
+        "tailwindcss": "^1.1.4",
+        "vue-qrcode-reader": "^2.1.1"
     }
 }

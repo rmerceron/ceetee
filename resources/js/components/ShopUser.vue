@@ -1,5 +1,15 @@
 <template>
     <div>
+        <div v-show="tradershops.length === 0">
+            <br><h3>Vous n'avez ancun favoris !</h3><br>
+            <div class="inline-flex float-right">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="viewShops">
+                    Voir les commerces
+                </button>
+            </div>
+            <br>
+            <br>
+        </div>
         <div v-for="usershop in tradershops">
             <div class="max-w-sm w-full lg:max-w-full lg:flex">
                 <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" v-bind:src="usershop.shop.image">
@@ -37,8 +47,11 @@
 
         ],
         methods: {
+            viewShops: function (){
+                window.location.href = '/';
+            },
             viewPromo: function (shopId) {
-                window.location.href = 'notification/' + shopId
+                window.location.href = 'promotion/' + shopId
             },
             deleteFavory(id) {
                 axios.delete('/dashboard/'+ id).then(function () {

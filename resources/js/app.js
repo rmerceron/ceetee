@@ -24,7 +24,9 @@ Vue.component('shop-favory', require('./components/ShopFavory.vue').default);
 Vue.component('shop-trader', require('./components/ShopTrader.vue').default);
 Vue.component('shop-user', require('./components/ShopUser.vue').default);
 Vue.component('promotion-card', require('./components/PromotionCard.vue').default);
+Vue.component('promotion-user', require('./components/PromotionUser.vue').default);
 Vue.component('create-promotion', require('./components/CreatePromotion.vue').default);
+Vue.component('scan-qrcode', require('./components/ScanQRcode.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

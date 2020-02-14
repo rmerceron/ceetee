@@ -25,4 +25,4 @@ Route::get('/promotion/{id}', 'PromotionController@index')->name('promotion');
 Route::get('/createPromotion/{id}', 'PromotionController@form');
 Route::post('/createPromotion/{id}', 'PromotionController@store');
 
-Route::get('/notification/{id}', 'NotificationController@index')->name('notification');
+Route::get('/promotion/scanqr/{id}', 'PromotionController@show')->name('scanQR');

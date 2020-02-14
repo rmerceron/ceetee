@@ -1,22 +1,31 @@
 <template>
     <div>
         <div v-for="promotion in promotions">
-            <div class="max-w-sm w-full lg:max-w-full lg:flex">
-                <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" v-bind:src="promotion.image">
-                </img>
-                <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-                    <div class="mb-8">
-                        <span class="text-gray-900 font-bold text-xl mb-2">{{promotion.type.libelle}}</span>
-                        <span class="text-gray-900 leading-none">DU {{promotion.startDate}} AU {{promotion.endDate}}</span>
-                        <div class="text-gray-900 font-bold text-xl mb-2">{{promotion.title}}</div>
-                        <p class="text-gray-700 text-base">{{promotion.description}}</p><br>
-                        <div class="flex items-center">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{promotion.limit}} UTILISATION</span>
-                            <img :src="'https://api.qrserver.com/v1/create-qr-code/?data='+ promotion.qrCode +'&amp;size=100x100'" alt="" title="" />
+            <div class="bg-gray-200 w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
+                <div class="flex h-full bg-white rounded overflow-hidden shadow-lg">
+                    <div class="w-full md:w-2/3 rounded-t">
+                        <img v-bind:src="promotion.image" class="h-full w-full shadow">
+                    </div>
+
+                    <div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
+                        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg"><br>
+                            <p class="w-full text-gray-600 text-xs md:text-sm pt-6 px-6">{{promotion.type.libelle}}</p>
+                            <p class="w-full text-gray-600 text-xs md:text-sm pt-6 px-6">DU {{promotion.startDate}} AU {{promotion.endDate}}</p>
+                            <div class="w-full font-bold text-xl text-gray-900 px-6">{{promotion.title}}</div>
+                            <p class="text-gray-800 font-serif text-base px-6 mb-5">{{promotion.description}}<br><br></p>
+                            <p class="text-gray-600 text-xs md:text-sm pt-6 px-6">{{promotion.limit}} UTILISATION</p>
+                        </div>
+
+                        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+                            <div class="flex items-center justify-between">
+                                <img :src="'https://api.qrserver.com/v1/create-qr-code/?data='+ promotion.qrCode +'&amp;size=100x100'" alt="" title="" />
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+            <br>
         </div>
     </div>
 </template>

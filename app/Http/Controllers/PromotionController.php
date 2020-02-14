@@ -33,6 +33,17 @@ class PromotionController extends Controller
         ]);
     }
 
+    /**
+     * @param Int $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show(Int $id)
+    {
+        return view('scanQR', [
+            'promotion' => $id,
+        ]);
+    }
+
     public function form(Int $id)
     {
         $shopselected = $id;
@@ -58,7 +69,6 @@ class PromotionController extends Controller
             'type_id'=>request('promotionType'),
         ]);
 
-        $promotions = Promotion::with('shop', 'status', 'perimeter', 'type')->get()->where('shop_id', $id);
 
         return ['redirect' => route('promotion', $id)];
     }
