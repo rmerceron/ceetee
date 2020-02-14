@@ -39,8 +39,10 @@ class PromotionController extends Controller
      */
     public function show(Int $id)
     {
+        $promotion = Promotion::with('shop', 'status', 'perimeter', 'type')->get()->where('shop_id', $id);
+
         return view('scanQR', [
-            'promotion' => $id,
+            'promotion' => $promotion,
         ]);
     }
 
